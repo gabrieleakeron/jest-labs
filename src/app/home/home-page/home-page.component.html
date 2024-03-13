@@ -1,0 +1,13 @@
+<div class="page-nav">
+
+    <router-outlet></router-outlet>
+    
+    <div class="container-card">
+        <div *ngFor="let page of pages" class="card" routerLink="{{page.routerLink}}">
+            <h2>{{page.title}}</h2>
+            <h3>{{page.description}}</h3>
+        </div>
+    </div>
+
+</div>
+
