@@ -7,10 +7,10 @@ import { BookService } from './book.service';
 import { EsitoEnum, SaveResult } from '../models/save-result.model';
 
 describe('ServiceHttpExample using TestBed', () => {
-  
+
   let service: BookService;
   let http: HttpClient;
-  let controller: HttpTestingController; 
+  let controller: HttpTestingController;
 
   beforeEach(() => {
 
@@ -43,29 +43,57 @@ describe('ServiceHttpExample using TestBed', () => {
       url: [service.baseUrl, service.BOOKS].join('/'),
     });
 
-    request.flush(expectedData); 
-   
+    request.flush(expectedData);
+
+  })
+
+  it('testing a get method with error', () => {
+
+    service.findAll().subscribe();
+
+    const request: TestRequest = controller.expectOne({
+      method: 'GET',
+      url: [service.baseUrl, service.BOOKS].join('/'),
+    });
+
+    request.flush('Error message', { status: 404, statusText: 'Not Found' });
+
   })
 
   it('testing a post method', () => {
-      
-      const book: Book = { id: 'id1', title: 'Title 1' };
-      
-      const expectedResult:SaveResult = { esito: EsitoEnum.SUCCESS, message: 'Salvataggio avvenuto correttamente' };
-  
-      service.createBook(book).subscribe((saveResult) => {
-        expect(saveResult.esito).toBe(EsitoEnum.SUCCESS);
-        expect(saveResult.message).toBe(true);
-      });
-  
-      const request: TestRequest = controller.expectOne({
-        method: 'POST',
-        url: [service.baseUrl, '123-xyz', service.CREATE_BOOK].join('/'),
-      });
-  
-      request.flush(expectedResult); 
-    
-    })
 
-  
+    const book: Book = { id: 'id1', title: 'Title 1' };
+
+    const expectedResult: SaveResult = { esito: EsitoEnum.SUCCESS, message: 'Salvataggio avvenuto correttamente' };
+
+    service.createBook(book).subscribe((saveResult) => {
+      expect(saveResult.esito).toBe(EsitoEnum.SUCCESS);
+      expect(saveResult.message).toBe(true);
+    });
+
+    const request: TestRequest = controller.expectOne({
+      method: 'POST',
+      url: [service.baseUrl, '123-xyz', service.CREATE_BOOK].join('/'),
+    });
+
+    request.flush(expectedResult);
+
+  })
+
+  it('testing a post method with error', () => {
+
+    const book: Book = { id: 'id1', title: 'Title 1' };
+
+    service.createBook(book).subscribe();
+
+    const request: TestRequest = controller.expectOne({
+      method: 'POST',
+      url: [service.baseUrl, '123-xyz', service.CREATE_BOOK].join('/'),
+    });
+
+    request.flush('Error message', { status: 404, statusText: 'Not Found' });
+
+  })
+
+
 });

@@ -11,10 +11,9 @@
 }
 
 .container-card {
-    display:grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     padding: 20px;
+
 }
 
 .card {
@@ -24,6 +23,7 @@
     cursor: pointer;
     background-color: whitesmoke;
     padding: 20px;
+    margin:20px
 }
 
 .card:hover {

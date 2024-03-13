@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Page } from './models/page.model';
-import { pages } from '../../utils/costants';
+import { Page } from './page.model';
+import { pages } from '../costants';
 import { Router } from '@angular/router';
 
 @Component({

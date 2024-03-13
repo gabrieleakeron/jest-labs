@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { UiModule } from '../modules/ui/ui.module';
+import { HomeModule } from './home/home.module';
+import { TopBarModule } from './top-bar/top-bar.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { UiModule } from '../modules/ui/ui.module';
   ],
   imports: [
     BrowserModule,
-    UiModule,
+    HomeModule,
+    TopBarModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([])
