@@ -1,0 +1,35 @@
+.akn-page-nav {
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 11px;
+    line-height: 1.55;
+    font-family: Roboto, "Open Sans", sans-serif, Helvetica, "Trebuchet MS", sans;
+    color: gray;
+    background-color: gray;
+    cursor: default;
+    height: 100%;
+}
+
+.container-card {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+.card:hover {
+    background-color: lightgray;
+}
+
+.homepage {
+    text-align: center;
+}
