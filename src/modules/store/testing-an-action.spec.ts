@@ -1,5 +1,5 @@
 import { TestBed } from "@angular/core/testing";
-import { MoviesState, MoviesStore } from "../../app/movies/movie.store";
+import { MoviesState, MoviesStore } from "../../app/movies/services/movie.store";
 import { skip, take } from "rxjs";
 
 describe('testing an action', () => {

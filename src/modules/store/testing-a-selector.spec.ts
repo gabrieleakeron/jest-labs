@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
 import { take } from 'rxjs';
-import { MoviesStore } from '../../app/movies/movie.store';
+import { MoviesStore } from '../../app/movies/services/movie.store';
 
-describe('MoviesComponent', () => {
+describe('Testing a selector', () => {
 
   let store: MoviesStore;
 

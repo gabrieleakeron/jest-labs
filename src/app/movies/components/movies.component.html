@@ -1,0 +1,14 @@
+
+<p></p>
+<div>
+    <dx-text-box placeholder="title" [(value)]="title"></dx-text-box>
+</div>
+
+<dx-button icon="check" type="success" text="Add movie" (onClick)="addMovie()" />
+<p></p>
+<p></p>
+<div class="movies-container">
+    <div *ngFor="let movie of movies$ | async" class="movie">
+        {{ movie }}
+    </div>
+</div>

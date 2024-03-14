@@ -1,11 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { MoviesStore } from './movie.store';
+import { MoviesStore } from '../services/movie.store';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  styleUrls: ['./movies.component.scss'],
+  providers: [MoviesStore]
 })
 export class MoviesComponent implements OnInit {
 

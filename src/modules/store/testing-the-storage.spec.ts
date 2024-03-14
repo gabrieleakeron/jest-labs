@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MoviesComponent } from '../../app/movies/movies.component';
-import { MoviesStore } from '../../app/movies/movie.store';
+import { MoviesComponent } from '../../app/movies/components/movies.component';
+import { MoviesStore } from '../../app/movies/services/movie.store';
+import { DxButtonModule, DxTextBoxModule } from 'devextreme-angular';
 
-describe('AppComponent', () => {
+describe('Testing the storage', () => {
 
     let component: MoviesComponent;
     let fixture: ComponentFixture<MoviesComponent>;
@@ -17,6 +18,7 @@ describe('AppComponent', () => {
 
         TestBed.configureTestingModule({
             declarations: [MoviesComponent],
+            imports: [DxTextBoxModule,DxButtonModule],
         });
         TestBed.overrideProvider(MoviesStore, { useValue: mockMoviesStore });
         fixture = TestBed.createComponent(MoviesComponent);

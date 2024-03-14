@@ -2,20 +2,16 @@ import { Page } from "./home-page/page.model";
 
 export enum ROUTES {
     HOME = 'home',
-    CONTATTI = 'contatti-page',
+    MOVIES = 'movies-page',
 }
 
 
 export const  pages: Page[] = [
     {
-      title: "HTTP SERVICE",
-      description: "Test sui service e http client",
-      routerLink: "/http-service-page",
+      title: "Movies",
+      description: "Movies page",
+      routerLink: "/movies-page",
     },
-    {
-      title: "PIPE",
-      description: "Test sulle pipe",
-      routerLink: "/pipes-page"
-    }
+
   ];
 

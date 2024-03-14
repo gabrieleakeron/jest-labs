@@ -1,7 +1,7 @@
 import { TestBed } from "@angular/core/testing";
-import { MoviesState, MoviesStore } from "../../app/movies/movie.store";
+import { MoviesState, MoviesStore } from "../../app/movies/services/movie.store";
 import { of, skip, take, throwError } from "rxjs";
-import { MoviesService } from "../../app/movies/movies.service";
+import { MoviesService } from "../../app/movies/services/movies.service";
 
 describe('testing an effect', () => {
   let store: MoviesStore;
