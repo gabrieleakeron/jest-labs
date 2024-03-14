@@ -1,0 +1,24 @@
+
+<div>
+    <h1>Testing the Store</h1>
+    <p>Testing the store itself focuses on validating the behavior of the Component Store implementation. 
+When testing the store, there are several key aspects to consider:
+1 - Mocking Dependencies: To isolate the store for testing, we need to mock dependencies such as selectors and actions. 
+This allows us to control the data returned by selectors and observe how actions are dispatched.
+2 - Testing State Updates: We should verify that the store properly updates its state in response to dispatched actions. 
+This ensures that the store behaves as expected.
+3 - Checking Selectors: Selectors play a crucial role in retrieving and deriving data from the store. 
+Its important to test that selectors return the expected data based on the stores state.
+    </p>
+</div>
+
+<div class="dx-field-label">Movie</div>
+<div class="dx-field-value">
+  <dx-text-box placeholder="title" [(value)]="title"></dx-text-box>
+</div>
+<dx-button icon="check" type="success" text="Add movie" (onClick)="addMovie()"/>
+<div class="movies-container">
+    <div *ngFor="let movie of movies$ | async" class="movie">
+        {{ movie }}
+    </div>
+</div>
