@@ -6,22 +6,19 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { MoviesModule } from './movies/movies.module';
 import { TopBarModule } from './top-bar/top-bar.module';
-import { MoviesComponent } from './movies/movies.component';
-import { DxButtonComponent, DxButtonModule, DxTextBoxModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MoviesComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HomeModule,
     TopBarModule,
+    MoviesModule,
     AppRoutingModule,
-    DxTextBoxModule,
-    DxButtonModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([])
   ],
